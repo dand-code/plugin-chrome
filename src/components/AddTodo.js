@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { atom, useRecoilState, useSetRecoilState } from "recoil";
 
 function AddTodo() {
-    const [text, setText] = useState("");
+    const textState = atom({
+        key: "textState", 
+        default: "", 
+    });
+    const [text, setText] = useRecoilState(textState);
 
     const onChange = (event) => {
-        console.log(event.target.value);
         setText(event.target.value);
     };
     const onClick = (event) => {
