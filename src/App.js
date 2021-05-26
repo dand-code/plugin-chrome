@@ -1,5 +1,7 @@
 import React from 'react';
-import { RecoilRoot } from "recoil";
+import {
+  RecoilRoot
+} from 'recoil';
 import AddTodo from './components/AddTodo';
 
 function App() {
@@ -8,7 +10,7 @@ function App() {
     <div>
       <h1>TODOS</h1>
       <AddTodo />
-      </div>
+    </div>
     </RecoilRoot>
   );
 }
