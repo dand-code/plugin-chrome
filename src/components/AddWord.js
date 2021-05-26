@@ -5,14 +5,14 @@ export const textState = atom({
     key: 'text', 
     default: '', 
 });
-export const todoListState = atom({
-    key: 'todoListState', 
+export const wordListState = atom({
+    key: 'wordListState', 
     default: [], 
 });
 
-function AddTodo() {
+function AddWord() {
   const [text, setText] = useRecoilState(textState);
-  const setTodoList = useSetRecoilState(todoListState);
+  const setWordList = useSetRecoilState(wordListState);
 
   const onChange = (event) => {
     setText(event.target.value);
@@ -21,15 +21,15 @@ function AddTodo() {
   const addItem = (event) => {
     event.preventDefault();
     if (!text.length) return;
-    setTodoList((oldTodoList) => {
-      const newTodoList = [
-        ...oldTodoList,
+    setWordList((oldWordList) => {
+      const newWordList = [
+        ...oldWordList,
         {
           text,
           isComplete: false,
         },
       ];
-      return newTodoList;
+      return newWordList;
     });
   };
 
@@ -41,4 +41,4 @@ function AddTodo() {
   );
 }
 
-export default AddTodo;
+export default AddWord;

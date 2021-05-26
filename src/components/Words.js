@@ -1,15 +1,15 @@
 import React from 'react';
 import { atom, useRecoilValue } from 'recoil';
-import { textState } from './AddTodo';
+import { textState } from './AddWord';
 
-export const todoListState = atom({
+export const wordListState = atom({
     key: "myList",
     default: textState
 });
 
-function Todos() {
+function Words() {
     
-  const todoList = useRecoilValue(todoListState);
+  const todoList = useRecoilValue(wordListState);
   return (
     <ul>
       <li>
@@ -22,4 +22,4 @@ function Todos() {
   );
 }
 
-export default Todos;
+export default Words;

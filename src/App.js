@@ -2,16 +2,16 @@ import React from 'react';
 import {
   RecoilRoot
 } from 'recoil';
-import AddTodo from './components/AddTodo';
-import Todos from './components/Todos';
+import AddWord from './components/AddWord';
+import Words from './components/Words';
 
 function App() {
   return (
     <RecoilRoot>
     <div>
-      <h1>TODOS</h1>
-      <AddTodo />
-      <Todos />
+      <h1>Words</h1>
+      <AddWord/>
+      <Words />
     </div>
     </RecoilRoot>
   );
