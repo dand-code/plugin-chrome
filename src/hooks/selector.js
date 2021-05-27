@@ -7,9 +7,9 @@ export const updateWordList = selector({
     get: ({get}) => {
         const listItem = get(wordListState);
         console.log(listItem);
-        return listItem.map((todo, index) => (
+        return listItem.map((word, index) => (
             <li key={index + 100}>
-                {todo}
+                {word}
             </li>
         ));   
     },

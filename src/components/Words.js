@@ -7,12 +7,12 @@ import { fetch } from '../services/localStorage';
 import { listTableDB } from '../hooks/variables';
 
 function Words() {  
-  const todoList = useRecoilValue(updateWordList);
+  const wordList = useRecoilValue(updateWordList);
   
   return (
     <div>
       <ul>
-       {todoList}
+       {wordList}
       </ul>
       {!fetch(listTableDB) ? '' :  <Button />}
      
