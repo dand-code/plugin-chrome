@@ -8,9 +8,16 @@ import Words from './components/Words';
 function App() {
   return ( 
     <RecoilRoot>
-      <h1>Words</h1>
-      <AddWord/>
-      <Words />
+      <div className="page">
+        <header>
+          <h1>Words</h1>
+        </header>
+        <main>
+          <AddWord/>
+          <Words />
+        </main>
+      </div>
+      
     </RecoilRoot>
   );
 }
