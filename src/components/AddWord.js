@@ -1,6 +1,9 @@
 import React from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { textState, wordListState } from '../hooks/atom';
+import { save } from '../services/localStorage';
+
+import { listTableDB } from '../hooks/variables';
 
 
 function AddWord() {
@@ -19,6 +22,7 @@ function AddWord() {
     setWordList((...oldText) => {
       const newList = [].concat(...oldText);
       newList.push(text);
+      save(listTableDB, newList);
       return newList;
     });
     return setText('');
