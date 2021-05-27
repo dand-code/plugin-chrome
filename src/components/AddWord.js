@@ -3,7 +3,6 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { textState, wordListState } from '../hooks/atom';
 
 
-
 function AddWord() {
   const [text, setText] = useRecoilState(textState);
   const setWordList = useSetRecoilState(wordListState);

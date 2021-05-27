@@ -9263,6 +9263,11 @@
   dependencies:
     "picomatch" "^2.2.1"
 
+"recoil-persist@^2.9.0":
+  "integrity" "sha512-8D1uPXY9EN1TmtjmdGoX3Zr3PWCNax9v3bpSppEAhDPJflJfRYFRnxQqtKpkqYU6dnGeo5FJUULq9weH4ImXUw=="
+  "resolved" "https://registry.npmjs.org/recoil-persist/-/recoil-persist-2.9.0.tgz"
+  "version" "2.9.0"
+
 "recoil@^0.3.1":
   "integrity" "sha512-KNA3DRqgxX4rRC8E7fc6uIw7BACmMPuraIYy+ejhE8tsw7w32CetMm8w7AMZa34wzanKKkev3vl3H7Z4s0QSiA=="
   "resolved" "https://registry.npmjs.org/recoil/-/recoil-0.3.1.tgz"
