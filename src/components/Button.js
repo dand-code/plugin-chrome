@@ -11,7 +11,7 @@ function Button() {
 
     const deleteList = () => {
         setWordList(() => {            
-            save(listTableDB, []);
+            save(listTableDB, null);
             return [];
           });
     }
