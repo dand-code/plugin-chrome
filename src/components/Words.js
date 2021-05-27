@@ -1,24 +1,20 @@
 import React from 'react';
-import { atom, useRecoilValue } from 'recoil';
-import { textState } from './AddWord';
-
-export const wordListState = atom({
-    key: "myList",
-    default: textState
-});
+import { useRecoilState} from 'recoil';
+import { wordListState} from '../hooks/atom';
 
 function Words() {
     
-  const todoList = useRecoilValue(wordListState);
+  const todoList = useRecoilState(wordListState);
+  console.log(wordListState);
+  console.log(todoList);
   return (
     <ul>
-      <li>
-        <label>
-          {todoList}
-        </label>
-      </li>
-
-  </ul>
+      {todoList.map((todo, index) => (
+        <li key={index + 100}>
+            {todo}
+        </li>
+      ))}
+    </ul>
   );
 }
 
