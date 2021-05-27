@@ -8,3 +8,4 @@ export const wordListState = atom({
     key: 'wordListState', 
     default: [], 
 });
+

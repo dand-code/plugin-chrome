@@ -1,19 +1,13 @@
 import React from 'react';
-import { useRecoilState} from 'recoil';
-import { wordListState} from '../hooks/atom';
+import { useRecoilValue} from 'recoil';
+import { updateWordList} from '../hooks/selector';
 
-function Words() {
-    
-  const todoList = useRecoilState(wordListState);
-  console.log(wordListState);
+function Words() {  
+  const todoList = useRecoilValue(updateWordList);
   console.log(todoList);
   return (
     <ul>
-      {todoList.map((todo, index) => (
-        <li key={index + 100}>
-            {todo}
-        </li>
-      ))}
+      {todoList}
     </ul>
   );
 }
