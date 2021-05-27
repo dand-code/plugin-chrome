@@ -6,13 +6,11 @@ import AddWord from './components/AddWord';
 import Words from './components/Words';
 
 function App() {
-  return (
+  return ( 
     <RecoilRoot>
-    <div>
       <h1>Words</h1>
       <AddWord/>
       <Words />
-    </div>
     </RecoilRoot>
   );
 }

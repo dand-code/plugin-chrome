@@ -1,14 +1,8 @@
 import React from 'react';
-import { atom, useRecoilState, useSetRecoilState} from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { textState, wordListState } from '../hooks/atom';
 
-export const textState = atom({
-    key: 'text', 
-    default: '', 
-});
-export const wordListState = atom({
-    key: 'wordListState', 
-    default: [], 
-});
+
 
 function AddWord() {
   const [text, setText] = useRecoilState(textState);
@@ -18,25 +12,23 @@ function AddWord() {
     setText(event.target.value);
   };
 
-  const addItem = (event) => {
-    event.preventDefault();
-    if (!text.length) return;
-    setWordList((oldWordList) => {
-      const newWordList = [
-        ...oldWordList,
-        {
-          text,
-          isComplete: false,
-        },
-      ];
-      return newWordList;
+  const addItem = (e) => {
+    e.preventDefault();
+    if (text.length === 0) {
+      return;
+    }
+    setWordList((...oldText) => {
+      const newList = [].concat(...oldText);
+      newList.push(text);
+      return newList;
     });
+    return setText('');
   };
 
   return (
     <form>
-        <input type="text" value={text} onChange={onChange} />
-        <button onClick={addItem}>Add</button>
+      <input type="text" value={text} onChange={onChange} />
+      <button onClick={addItem}>Add</button>
     </form>
   );
 }
