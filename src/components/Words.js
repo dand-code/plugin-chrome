@@ -12,7 +12,7 @@ function Words() {
   return (
     <div>
       <ul>
-       {wordList }
+       {wordList}
       </ul>
       {!fetch(listTableDB) ? '' :  <Button />}
      
