@@ -18,7 +18,6 @@ function AddWord() {
       ...text,
       [name]: value,
     });
-    console.log(text);
   };
 
   const addItem = (e) => {
