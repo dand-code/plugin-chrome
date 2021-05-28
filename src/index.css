@@ -32,12 +32,17 @@ ul {
 li {
   border: 2px dashed var(--yellow);
   width: 50%;
+  max-width: 240px;
+  padding-bottom: 15px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 button {
   line-height: 22px;
-  padding: 0 8px 2px;
+  padding: 3px 8px 2px;
   background: var(--black);
   color: var(--yellow);
   border: 2px solid var(--yellow);
@@ -70,13 +75,15 @@ input[type="text"]:focus {
 }
 
 p {
-  position: relative;
   cursor: pointer;
   font-size: 1.5em;
   font-weight: 600;
-  padding: 0 1em 0;
   user-select: none;
-  vertical-align: top;
+}
+
+span {
+  font-size: 1.3em;
+  font-weight: 400;
 }
 
 
