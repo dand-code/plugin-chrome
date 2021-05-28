@@ -30,7 +30,8 @@ function AddWord() {
 
   return (
     <form>
-      <input type="text" value={text} onChange={onChange} />
+      <input type="text" value={text} placeholder="new word" onChange={onChange} />
+      <input type="text" value={text} placeholder="notes"  onChange={onChange} />
       <button onClick={addItem}>Add</button>
     </form>
   );
