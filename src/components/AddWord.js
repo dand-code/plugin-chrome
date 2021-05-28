@@ -10,9 +10,10 @@ function AddWord() {
   const [text, setText] = useRecoilState(textState);
   const setWordList = useSetRecoilState(wordListState);
 
-  const onChange = (event) => {
-    setText(event.target.value);
-  };
+  // const onChange = (event) => {
+  //   setText(event.target.value);
+  //   console.log()
+  // };
 
   const addItem = (e) => {
     e.preventDefault();
@@ -30,8 +31,9 @@ function AddWord() {
 
   return (
     <form>
-      <input type="text" value={text} placeholder="new word" onChange={onChange} />
-      <input type="text" value={text} placeholder="notes"  onChange={onChange} />
+      <input type="text" value={text.word} placeholder="new word" onChange={(e) => setText(e.target.value)}/>
+
+      <input type="text" value={text.notes} placeholder="notes"  onChange={(e) => setText(e.target.value)} />
       <button onClick={addItem}>Add</button>
     </form>
   );
