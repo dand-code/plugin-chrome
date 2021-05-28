@@ -32,7 +32,7 @@ ul {
 li {
   border: 2px dashed var(--yellow);
   width: 50%;
-  max-width: 240px;
+  max-width: 300px;
   padding-bottom: 15px;
   margin-bottom: 10px;
   display: flex;
@@ -84,6 +84,7 @@ p {
 span {
   font-size: 1.3em;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 

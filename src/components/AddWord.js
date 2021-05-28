@@ -12,8 +12,6 @@ function AddWord() {
 
 
   const handleInputChange = (e) => {
-    //const name = e.target.name 
-    //const value = e.target.value 
     const { name, value } = e.target;
 
     setText({
@@ -22,24 +20,6 @@ function AddWord() {
     });
     console.log(text);
   };
-
-  // const onChange = (event) => {
-  //   setText(event.target.value);
-  //   console.log()
-  // };
-
-  // const handleInputChange = (e) => {
-  //   const { name, text} = e.target;
-
-  //   setText({
-  //     ...text,
-
-  //     [name]: text,
-  //   });
-
-  //   console.log(text);
-  // };
-
 
   const addItem = (e) => {
     e.preventDefault();
@@ -60,14 +40,14 @@ function AddWord() {
       <input
         type="text"
         name="word"
-        value={text.word}
+        value={text.word || ''}
         placeholder="new word" onChange={handleInputChange}
       />
 
       <input
         type="text"
         name ="notes"
-        value={text.notes}
+        value={text.notes || ''}
         placeholder="notes"
         onChange={handleInputChange}
       />
