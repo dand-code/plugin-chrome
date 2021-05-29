@@ -38,12 +38,19 @@ ul {
 
 
 li {
-  border: 2px dotted var(--yellow);
+  display: flex;
+  justify-content: space-between;
   width: 50%;
   max-width: 300px;
-  padding: 7px 0;
-  margin: 5px 0;
+  /* padding: 7px 0; */
+  margin: 3px 0;
 }
+
+.box{
+  border: 2px dotted var(--yellow);
+  width: 86%;
+}
+
 
 button {
   line-height: 22px;
@@ -76,9 +83,11 @@ input[type="text"] {
   margin-right: 5px;
   padding: 3px 8px;
 }
+
 input[type="text"]:last-of-type {
   margin-right: 0;
 }
+
 input[type="text"]:focus {
   outline: none;
 }

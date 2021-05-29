@@ -22,9 +22,10 @@ function AddWord() {
 
   const addItem = (e) => {
     e.preventDefault();
-    if (text.length === 0 || text.note.length === 0)
+    console.log(text);
+    if (!text.word || !text.note) 
     {
-      alert('Oh no! You forgot to put a note. 🧐')
+      alert('Oh no! You forgot to put a note. 🧐');
       return;
     } 
 
@@ -40,6 +41,7 @@ function AddWord() {
   return (
     <form>
       <input
+        required="required"
         type="text"
         name="word"
         value={text.word || ''}
@@ -47,6 +49,7 @@ function AddWord() {
       />
 
       <input
+        required="required"
         type="text"
         name ="note"
         value={text.note || ''}
