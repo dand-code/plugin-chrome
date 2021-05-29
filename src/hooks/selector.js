@@ -9,10 +9,9 @@ export const updateWordList = selector({
         const listItem = get(wordListState);
         console.log(listItem);
         return listItem.map((word, index) => (
-            <li key={index + 100}>     
-                <p>{word.word}</p>
-                <span>{word.note}</span>
-            </li>
+            <li key={index + 100}>
+                <p>{word.word} <span>{word.note}</span></p>
+            </li> 
         ));   
     },
   });

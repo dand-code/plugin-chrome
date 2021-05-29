@@ -22,9 +22,12 @@ function AddWord() {
 
   const addItem = (e) => {
     e.preventDefault();
-    if (text.length === 0) {
+    if (text.length === 0 || text.note.length === 0)
+    {
+      alert('Oh no! You forgot to put a note. 🧐')
       return;
-    }
+    } 
+
     setWordList((...oldText) => {
       const newList = [].concat(...oldText);
       newList.push(text);

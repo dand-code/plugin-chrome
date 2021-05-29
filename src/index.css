@@ -1,3 +1,9 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
 body {
   --black: #393e46;
   --black-off: #444;
@@ -27,17 +33,16 @@ body {
 ul {
   list-style: none;
   align-items: center;
+  margin: 10px 0;
 }
 
+
 li {
-  border: 2px dashed var(--yellow);
+  border: 2px dotted var(--yellow);
   width: 50%;
   max-width: 300px;
-  padding-bottom: 15px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 7px 0;
+  margin: 5px 0;
 }
 
 button {
@@ -68,7 +73,11 @@ input[type="text"] {
   font-size: 18px;
   padding-left: 10px;
   color: var(--yellow);
-  margin-right: 7px;
+  margin-right: 5px;
+  padding: 3px 8px;
+}
+input[type="text"]:last-of-type {
+  margin-right: 0;
 }
 input[type="text"]:focus {
   outline: none;
@@ -78,12 +87,11 @@ p {
   cursor: pointer;
   font-size: 1.5em;
   font-weight: 600;
-  user-select: none;
 }
 
 span {
-  font-size: 1.3em;
-  font-weight: 400;
+  font-size: 0.7em;
+  font-weight: 200;
   overflow-wrap: break-word;
 }
 
