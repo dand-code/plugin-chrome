@@ -45,9 +45,9 @@ function AddWord() {
 
       <input
         type="text"
-        name ="notes"
-        value={text.notes || ''}
-        placeholder="notes"
+        name ="note"
+        value={text.note || ''}
+        placeholder="note"
         onChange={handleInputChange}
       />
       <button onClick={addItem}>Add</button>
