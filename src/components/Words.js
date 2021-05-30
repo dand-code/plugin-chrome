@@ -9,7 +9,7 @@ import { listTableDB } from '../hooks/variables';
 function Words() {  
   const wordList = useRecoilValue(updateWordList);
   
-  return (
+  return (  
     <div>
       <ul className="page">
        {wordList}

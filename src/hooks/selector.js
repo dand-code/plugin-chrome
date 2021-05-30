@@ -1,7 +1,7 @@
 
 import { selector } from 'recoil';
 import { wordListState } from '../hooks/atom';
-
+import DeleteItem from '../components/DeleteItem';
 
 export const updateWordList = selector({
     key: 'updateWordList',
@@ -9,11 +9,11 @@ export const updateWordList = selector({
         const listItem = get(wordListState);
         console.log(listItem);
         return listItem.map((word, index) => (
-            <li key={index + 100}>
+            <li key={index+100}>
                 <div className="box">
                     <p>{word.word} <span>{word.note}</span></p>
                 </div>
-                <button>x</button>
+                <DeleteItem item={ word.word }/>
             </li>    
         ));   
     },
