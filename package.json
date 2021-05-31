@@ -10,6 +10,7 @@
     "react-scripts": "4.0.3",
     "recoil": "^0.3.1",
     "recoil-persist": "^2.9.0",
+    "testing-library": "^0.0.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -34,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.12.0"
   }
 }

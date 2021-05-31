@@ -1,15 +1,11 @@
 import React from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { textState, wordListState } from '../hooks/atom';
-import { save } from '../services/localStorage';
-
-import { listTableDB } from '../hooks/variables';
+import { useRecoilState } from 'recoil';
+import { textState } from '../hooks/atom';
 
 
-function AddWord() {
+
+export default function AddWord(props) {
   const [text, setText] = useRecoilState(textState);
-  const setWordList = useSetRecoilState(wordListState);
-
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -22,43 +18,40 @@ function AddWord() {
 
   const addItem = (e) => {
     e.preventDefault();
-    console.log(text);
     if (!text.word || !text.note) 
     {
       alert('Oh no! You forgot to put a note. 🧐');
       return;
     } 
-
-    setWordList((...oldText) => {
-      const newList = [].concat(...oldText);
-      newList.push(text);
-      save(listTableDB, newList);
-      return newList;
-    });
+    
+    props.saveWord(text);
     return setText('');
   };
 
   return (
-    <form>
+    <form onSubmit={ addItem }>
+      <label htmlFor="word">Word</label>
       <input
         required="required"
+        id="word"
         type="text"
         name="word"
         value={text.word || ''}
         placeholder="new word" onChange={handleInputChange}
       />
 
+      <label htmlFor="note">Note</label>
       <input
         required="required"
+        id="note"
         type="text"
         name ="note"
         value={text.note || ''}
         placeholder="note"
         onChange={handleInputChange}
       />
-      <button onClick={addItem}>Add</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
 
-export default AddWord;

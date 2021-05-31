@@ -1,14 +1,12 @@
-
 import { wordListState} from '../hooks/atom';
 import { useRecoilState } from 'recoil';
+//local storage
 import { save } from '../services/localStorage';
 import { listTableDB } from '../hooks/variables';
-
 
 export default function DeleteItem(props) {
     const word = props.item;
     const [list, setList] = useRecoilState(wordListState);
-   
    
     function DeleteClick(e) {
         e.preventDefault();

@@ -1,22 +1,14 @@
 import React from 'react';
 import Button from './Button';
-import { useRecoilValue} from 'recoil';
-import { updateWordList } from '../hooks/selector';
 
-import { fetch } from '../services/localStorage';
-import { listTableDB } from '../hooks/variables';
-
-function Words() {  
-  const wordList = useRecoilValue(updateWordList);
-  
+export default function Words(props) {  
+  console.log(props)
   return (  
     <div>
       <ul className="page">
-       {wordList}
+       {props.wordList}
       </ul>
-      {!fetch(listTableDB) ? '' :  <Button />}
+      {!props.wordList[0] ? '' :  <Button />}
     </div>
   )
 }
-
-export default Words;
