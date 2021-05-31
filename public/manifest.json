@@ -6,6 +6,6 @@
   "action": {
     "default_popup": "index.html",
     "default_title": "Pop-up Word App",
-    "default_icon": "blablablando.png"
+    "default_icon": "popup-icon.png"
   }
 }
