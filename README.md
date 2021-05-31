@@ -14,6 +14,6 @@ __So far I have managed to reproduce exactly what my notebook does:__
 - delete an item from the list and 
 - delete all items.
 
-Among other improvements, __the challenge now is to make the browser recognize on the pages that I access the words stored in my list and to show me a notification that allows me to recode the note I wrote for each word found.__
+Among other improvements, __the challenge now is to make the browser recognize the words stored in my list a long the websites and allow me to access the notes of those words.__
 
 I'm in full production. I hope to be able to share the results soon.
