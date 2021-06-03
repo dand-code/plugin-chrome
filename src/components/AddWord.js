@@ -18,15 +18,16 @@ export default function AddWord(props) {
 
   const addItem = (e) => {
     e.preventDefault();
-    if (!text.word || !text.note) 
-    {
-      alert('Oh no! You forgot to put a note. 🧐');
-      return;
-    } 
-    
+  
     props.saveWord(text);
     return setText('');
   };
+  const ErrorAlert = () => {
+      if (!text.word || !text.note){
+        window.alert('Oh no! You forgot to put a note. 🧐');
+      return;
+    } 
+  }
 
   return (
     <form onSubmit={ addItem }>
@@ -50,7 +51,7 @@ export default function AddWord(props) {
         placeholder="note"
         onChange={handleInputChange}
       />
-      <button type="submit">Add</button>
+      <button onClick={ErrorAlert} type="submit">Add</button>
     </form>
   );
 }
