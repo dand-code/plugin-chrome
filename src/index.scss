@@ -1,0 +1,131 @@
+/* global.css */
+
+#root {
+  height: 100%;
+}
+
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2);
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 20px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+body {
+  --black: #393e46;
+  --black-off: #444;
+  --yellow: #f7df1e;
+  --lightgray: #9c9e9f;
+  --gray: #bdc1c6;
+  --white: #fff;
+  --green: #06842c;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--black);
+  color: var(--yellow);
+  letter-spacing: 0.05em;
+  width: 350px;
+  height: 500px;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 15px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+  padding: 10px 15px;
+  & label{
+    display: none;
+  }
+  & input + button {
+    line-height: 30px;
+    border-radius: 0 3px 3px 0;
+    background: var(--yellow);
+    color: var(--black);
+    border: none;
+  }
+  
+  & input[type="text"] {
+    background: var(--black-off);
+    border: none;
+    line-height: 30px;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding-left: 10px;
+    color: var(--yellow);
+    margin-right: 5px;
+    padding: 3px 8px;
+    width: 80%;
+    max-width: 230px;
+  }
+  
+  & input[type="text"]:last-of-type {
+    margin-right: 0;
+  }
+  
+  & input[type="text"]:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+  align-items: center;
+  margin: 10px 0;
+  & li {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 300px;
+    margin: 3px 0;
+    & .box{
+      border: 2px dotted var(--yellow);
+      width: 86%;
+    }
+    & p {
+      cursor: pointer;
+      font-size: 1.4em;
+      font-weight: 600;
+      & span {
+        font-size: 0.7em;
+        font-weight: 200;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+button {
+  line-height: 22px;
+  padding: 3px 8px 2px;
+  background: var(--black);
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 3px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
