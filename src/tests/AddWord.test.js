@@ -44,5 +44,62 @@ describe("AddWord component", () => {
             expect(word).toBeInTheDocument();
             expect(note).toBeInTheDocument();
         });
+
+        describe("As a user, I want to add a new word without a note", () => {
+            it("Should show a error alert on screen", () => {
+                const saveWord = jest.fn();
+                global.alert = jest.fn();
+                render(<RecoilRoot><AddWord saveWord={saveWord} /></RecoilRoot>);
+        
+                const word = screen.getByLabelText(/word/i);
+                userEvent.type(word, "My new word");
+        
+                const note = screen.getByLabelText(/note/i);
+                userEvent.type(note, "");
+        
+                const button = screen.getByRole("button", { name: /add/i });
+                userEvent.click(button);
+                
+                expect(global.alert).toHaveBeenCalledTimes(1);
+            });
+        });
+
+        describe("As a user, I want to add a new note without a word", () => {
+            it("Should show a error alert on screen", () => {
+                const saveWord = jest.fn();
+                global.alert = jest.fn();
+                render(<RecoilRoot><AddWord saveWord={saveWord} /></RecoilRoot>);
+        
+                const word = screen.getByLabelText(/word/i);
+                userEvent.type(word, "");
+        
+                const note = screen.getByLabelText(/note/i);
+                userEvent.type(note, "My note");
+        
+                const button = screen.getByRole("button", { name: /add/i });
+                userEvent.click(button);
+                
+                expect(global.alert).toHaveBeenCalledTimes(1);
+            });
+        });
+
+        describe("As a user, I want type a empty word and note input", () => {
+            it("Should show a error alert on screen", () => {
+                const saveWord = jest.fn();
+                global.alert = jest.fn();
+                render(<RecoilRoot><AddWord saveWord={saveWord} /></RecoilRoot>);
+        
+                const word = screen.getByLabelText(/word/i);
+                userEvent.type(word, "");
+        
+                const note = screen.getByLabelText(/note/i);
+                userEvent.type(note, "");
+        
+                const button = screen.getByRole("button", { name: /add/i });
+                userEvent.click(button);
+                
+                expect(global.alert).toHaveBeenCalledTimes(1);
+            });
+        });
     });
 });
