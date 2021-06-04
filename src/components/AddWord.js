@@ -18,13 +18,13 @@ export default function AddWord(props) {
 
   const addItem = (e) => {
     e.preventDefault();
-  
-    props.saveWord(text);
+
+    props.saveWord(text); 
     return setText('');
   };
   const ErrorAlert = () => {
       if (!text.word || !text.note){
-        window.alert('Oh no! You forgot to put a note. 🧐');
+       alert('Oh no! You forgot to put a note. 🧐');
       return;
     } 
   }
