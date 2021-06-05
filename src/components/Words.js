@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-export default function Words(props) {  
-  console.log(props)
+export default function Words(props) {
   return (  
     <div>
       <ul className="page">

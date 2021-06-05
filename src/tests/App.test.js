@@ -2,8 +2,9 @@ import { render, screen } from "@testing-library/react";
 import App from '../App';
 import { RecoilRoot } from 'recoil';
 
-describe('Initialize App component', () => {
-    describe("The fisrt time to open the app", () => {
+describe('App component', () => {
+   
+    describe('The fisrt time to open the app', () => {
         it('should see the title, form inputs and "add" button', () => {
             render(<RecoilRoot><App /></RecoilRoot>);
             const title = screen.getByRole("heading", { name: /words/i });
@@ -14,6 +15,7 @@ describe('Initialize App component', () => {
             expect(title).toBeInTheDocument();
             expect(word).toBeInTheDocument();
             expect(note).toBeInTheDocument();
-        });
+        });        
     });
 });
+

@@ -14,7 +14,7 @@ function Button() {
     }
  
   return (
-    <button onClick={deleteList}>Delete All</button>
+    <button onClick={deleteList} type="button">Delete All</button>
   )
 }
 
