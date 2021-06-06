@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { textState } from '../hooks/atom';
-
+//PropTypes
+import PropTypes from 'prop-types';
 
 
 export default function AddWord(props) {
@@ -56,3 +57,6 @@ export default function AddWord(props) {
   );
 }
 
+AddWord.propTypes = {
+  saveWord: PropTypes.any
+};

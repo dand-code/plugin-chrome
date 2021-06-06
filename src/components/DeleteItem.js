@@ -1,13 +1,16 @@
-import { wordListState} from '../hooks/atom';
+import React from 'react';
+import { wordListState } from '../hooks/atom';
 import { useRecoilState } from 'recoil';
 //local storage
 import { save } from '../services/localStorage';
 import { listTableDB } from '../hooks/variables';
+//PropTypes
+import PropTypes from 'prop-types';
 
 export default function DeleteItem(props) {
     const word = props.item;
     const [list, setList] = useRecoilState(wordListState);
-   
+
     function DeleteClick(e) {
         e.preventDefault();
         const newList = list.filter(function (item) {
@@ -18,6 +21,10 @@ export default function DeleteItem(props) {
     }
 
     return (
-        <button onClick={DeleteClick}>x</button>   
+        <button onClick={DeleteClick} data-testid={`d_${word}`}>x</button>   
     );   
+}
+
+DeleteItem.propTypes = {
+    item: PropTypes.string
 };

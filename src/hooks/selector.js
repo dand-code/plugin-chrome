@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { selector } from 'recoil';
 import { wordListState } from '../hooks/atom';
 import DeleteItem from '../components/DeleteItem';
