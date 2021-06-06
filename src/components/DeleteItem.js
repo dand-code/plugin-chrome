@@ -10,14 +10,14 @@ export default function DeleteItem(props) {
    
     function DeleteClick(e) {
         e.preventDefault();
-        const newList = list.filter(function( item ) {
+        const newList = list.filter(function (item) {
             return item.word !== word;
         });
         setList(newList);
         save(listTableDB, newList);
     }
 
-    return(
+    return (
         <button onClick={DeleteClick}>x</button>   
     );   
 };

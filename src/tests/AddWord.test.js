@@ -1,10 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import React from 'react';
 import userEvent from "@testing-library/user-event";
-import AddWord from "../components/AddWord";
+import { render, screen } from "@testing-library/react";
 import { RecoilRoot } from 'recoil';
-import '@testing-library/jest-dom/extend-expect'
-
-
+import AddWord from "../components/AddWord";
 
 describe("AddWord component", () => {
     describe("As a user, I want to add a new word with note", () => {
