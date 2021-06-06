@@ -13,6 +13,7 @@ export default function DeleteItem(props) {
 
     function DeleteClick(e) {
         e.preventDefault();
+        console.log(word);
         const newList = list.filter(function (item) {
             return item.word !== word;
         });
@@ -21,7 +22,7 @@ export default function DeleteItem(props) {
     }
 
     return (
-        <button onClick={DeleteClick} data-testid={`d_${word}`}>x</button>   
+        <button onClick={DeleteClick} data-testid={`del_${word}`}>x</button>   
     );   
 }
 

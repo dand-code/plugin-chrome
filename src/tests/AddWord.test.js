@@ -6,7 +6,7 @@ import AddWord from "../components/AddWord";
 
 describe("AddWord component", () => {
     describe("As a user, I want to add a new word with note", () => {
-        it("Saving new word on local storage", () => {
+        it("Should save a new word on local storage", () => {
             const saveWord = jest.fn();
             render(<RecoilRoot><AddWord saveWord={saveWord} /></RecoilRoot>);
     
@@ -26,7 +26,7 @@ describe("AddWord component", () => {
             });
         });
 
-        it("Show new word on screen", () => {
+        it("Should show a new word on screen", () => {
             const saveWord = jest.fn();
             render(<RecoilRoot><AddWord saveWord={saveWord} /></RecoilRoot>);
     
@@ -81,7 +81,7 @@ describe("AddWord component", () => {
             });
         });
 
-        describe("As a user, I want type a empty word and note input", () => {
+        describe("As a user, I want type a empty word and empty note input", () => {
             it("Should show a error alert on screen", () => {
                 const saveWord = jest.fn();
                 global.alert = jest.fn();
