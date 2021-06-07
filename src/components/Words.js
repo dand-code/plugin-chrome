@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from './Button';
+//PropTypes
+import PropTypes from 'prop-types';
 
 export default function Words(props) {
   return (  
@@ -11,3 +13,7 @@ export default function Words(props) {
     </div>
   )
 }
+
+Words.propTypes = {
+  wordList: PropTypes.string
+};

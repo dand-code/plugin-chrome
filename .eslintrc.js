@@ -1,6 +1,6 @@
 module.exports = {
     "env": {
-        "jest/global": true,
+        "jest/globals": true,
         "browser": true,
         "es2021": true
     },
@@ -17,7 +17,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest"
     ],
     "rules": {
     }
