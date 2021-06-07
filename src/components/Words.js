@@ -15,5 +15,5 @@ export default function Words(props) {
 }
 
 Words.propTypes = {
-  wordList: PropTypes.string
+  wordList: PropTypes.array
 };
