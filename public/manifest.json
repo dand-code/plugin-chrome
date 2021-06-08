@@ -1,11 +1,12 @@
 {
-  "name": "Pop-up Word - dand-code",
-  "description": "Chrome extension with React",
+  "name": "Browsavulary - dand-code",
+  "description": "A new plugin from Dand-code productions",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_popup": "index.html",
-    "default_title": "Pop-up Word App",
-    "default_icon": "popup-icon.png"
-  }
+  "content_scripts": [{
+    "js": ["replacement_words.js"],
+    "matches": ["http://*/*",
+                "https://*/*"
+    ]
+  }]
 }
