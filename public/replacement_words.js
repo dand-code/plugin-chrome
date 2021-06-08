@@ -1,0 +1,1 @@
+document.body.innerHTML = document.body.innerHTML.replace(/Google/g, `<span className="highlighted>CatapumChimpun</span>`);
