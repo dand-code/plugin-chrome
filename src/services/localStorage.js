@@ -3,7 +3,7 @@
 function save(ref, item) {
   localStorage.setItem(ref, JSON.stringify(item));
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { words:  JSON.stringify(item)}, function (response) { 
+    chrome.tabs.sendMessage(tabs[0].id, { words:  item}, function (response) { 
         console.log(response.farwell);
     });
   });
