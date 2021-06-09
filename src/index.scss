@@ -90,6 +90,9 @@ form{
 }
 
 ul {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
   list-style: none;
   align-items: center;
   margin: 10px 0;
