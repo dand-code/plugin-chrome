@@ -14,6 +14,6 @@ chrome.runtime.onMessage.addListener(
 function highlightWords(word, note) { 
   const regExp = new RegExp(word, "ig");
 
-  document.body.innerHTML = document.body.innerHTML.replace(regExp, `<span style='background: yellow; cursor:pointer;' title="${note}">${word}</span>`)  
+  document.body.innerHTML = document.body.innerHTML.replace(regExp, `<span style='background: yellow; cursor:pointer;' title='${note}'>${word}</span>`)  
 }
 
