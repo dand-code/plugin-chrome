@@ -23,6 +23,7 @@ export default function AddWord(props) {
     props.saveWord(text); 
     return setText('');
   };
+  
   const ErrorAlert = () => {
       if (!text.word || !text.note){
        alert('Oh no! You forgot to put a note. 🧐');

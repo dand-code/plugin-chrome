@@ -10,6 +10,7 @@ import Words from './components/Words';
 import { save } from './services/localStorage';
 import { listTableDB } from './hooks/variables';
 
+
 export default function App() {
   const setWordList = useSetRecoilState(wordListState);
   const wordList = useRecoilValue(updateWordList);

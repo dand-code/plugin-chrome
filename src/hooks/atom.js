@@ -1,7 +1,5 @@
 import { atom } from 'recoil';
 import { fetch } from '../services/localStorage';
-import { listTableDB } from '../hooks/variables';
-
 
 export const textState = atom({
     key: 'text', 
@@ -10,7 +8,13 @@ export const textState = atom({
         note: null,
       }
 });
+
 export const wordListState = atom({
     key: 'wordListState', 
-    default: fetch(listTableDB) || [], 
+    default: getWordListState(), 
 });
+
+
+async function getWordListState() { 
+    return await(fetch()) || [];
+}
