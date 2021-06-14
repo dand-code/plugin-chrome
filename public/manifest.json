@@ -11,6 +11,9 @@
     "default_title": "Pop-up Word App",
     "default_icon": "popup-icon.png"
   },
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [{
     "js": ["replacement_words.js"],
     "matches": ["http://*/*",
