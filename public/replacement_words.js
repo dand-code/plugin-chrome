@@ -11,11 +11,14 @@ class Highlight {
     }
 
     highlightWords() { 
-        document.body.innerHTML = this.originalHtml;
         this.words.forEach((word) => {
             this._highlightWord(word.word, word.note);
         });
-    } 
+    }
+    
+    resetHTML() { 
+        document.body.innerHTML = this.originalHtml;
+    }
 
     _highlightWord(word, note) { 
         const regExp = new RegExp(word, "ig");
@@ -30,7 +33,6 @@ function myMain() {
     let highlighter = new Highlight();
 
     chrome.runtime.sendMessage('get-word-list', (response) => {
-        console.log('received user data', response);
         if (response)
         {
             highlighter.updateWords(response);
@@ -40,11 +42,17 @@ function myMain() {
     
     chrome.runtime.onMessage.addListener(
         function (request, _sender, _sendResponse) {
+
+            highlighter.resetHTML();
+            if (request === "switch-off")
+                return true;
+            
             if (Array.isArray(request.words))
             {
                 highlighter.updateWords(request.words);
                 highlighter.highlightWords();
             }
+            return true;
          }
     );
 }

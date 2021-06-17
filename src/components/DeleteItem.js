@@ -13,7 +13,6 @@ export default function DeleteItem(props) {
 
     function DeleteClick(e) {
         e.preventDefault();
-        console.log(word);
         const newList = list.filter(function (item) {
             return item.word !== word;
         });

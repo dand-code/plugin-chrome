@@ -7,7 +7,7 @@ import DeleteItem from '../components/DeleteItem';
 export const updateWordList = selector({
     key: 'updateWordList',
     get: async({get}) => {
-        let listItem = get(wordListState);
+        let listItem = get(wordListState); 
 
         return listItem.map((word, index) => (
             <li key={index+100}>

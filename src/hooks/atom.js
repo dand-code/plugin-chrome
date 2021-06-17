@@ -14,6 +14,11 @@ export const wordListState = atom({
     default: getWordListState(), 
 });
 
+export const activateState = atom({
+    key: 'activateState', 
+    default: true, 
+});
+
 
 async function getWordListState() { 
     return await(fetch()) || [];

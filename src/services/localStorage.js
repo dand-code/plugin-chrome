@@ -1,8 +1,10 @@
 /* global chrome */
 
-function save(myList, item) {
-  storage(myList, item);
-  emitMessage(item);
+import { emitMessage } from './syncMessage';
+
+function save(myList, wordList) {
+  storage(myList, wordList);
+  emitMessage({ words: wordList });
 }
 
 function fetch() {
@@ -24,10 +26,6 @@ async function storage(myList, items) {
   });
 }
 
-function emitMessage(item) { 
-  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, { words:  item});
-  });
-}
+
 
 export { save, fetch };
