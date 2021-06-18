@@ -1,6 +1,6 @@
 import React from 'react';
-import { wordListState } from '../hooks/atom';
-import { useRecoilState } from 'recoil';
+import { wordListState, activateState } from '../hooks/atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
 //local storage
 import { save } from '../services/localStorage';
 import { listTableDB } from '../hooks/variables';
@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 export default function DeleteItem(props) {
     const word = props.item;
     const [list, setList] = useRecoilState(wordListState);
+    const activated = useRecoilValue(activateState);
 
     function DeleteClick(e) {
         e.preventDefault();
@@ -17,7 +18,7 @@ export default function DeleteItem(props) {
             return item.word !== word;
         });
         setList(newList);
-        save(listTableDB, newList);
+        save(listTableDB, { activated: activated, words: newList });
     }
 
     return (

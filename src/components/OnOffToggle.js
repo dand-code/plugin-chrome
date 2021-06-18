@@ -9,7 +9,7 @@ export default function onOffToggle(props) {
 
   return (  
     <label className="swtich-container">
-      <input type="checkbox" id="switch" onChange={updateActiveExtension} />
+      <input type="checkbox" id="switch" onChange={updateActiveExtension} checked={!props.activated} />
       <div className="slider">
         <span className="on">ON</span>
         <span className="off">OFF</span>
@@ -20,5 +20,6 @@ export default function onOffToggle(props) {
 
 
 onOffToggle.propTypes = {
-  updateActiveExtension:PropTypes.function
+  updateActiveExtension: PropTypes.function,
+  activated:PropTypes.boolean
 };

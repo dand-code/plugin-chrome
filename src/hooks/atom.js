@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { fetch } from '../services/localStorage';
+import { fetchWords, fetchExtState } from '../services/localStorage';
 
 export const textState = atom({
     key: 'text', 
@@ -16,10 +16,14 @@ export const wordListState = atom({
 
 export const activateState = atom({
     key: 'activateState', 
-    default: true, 
+    default: getExtStateState(), 
 });
 
 
 async function getWordListState() { 
-    return await(fetch()) || [];
+    return await(fetchWords());
+}
+
+async function getExtStateState() { 
+    return await(fetchExtState());
 }

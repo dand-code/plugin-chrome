@@ -20,27 +20,33 @@ export default function App() {
   const [activated, setActivated] = useRecoilState(activateState);
 
   const updateActiveExtension = () => { 
-    if (activated===true)
+    if (activated === true)
+    {
       desactivateExtension();
-    else
+      save(listTableDB, { activated: false, words: wordList });
+    }
+    else 
+    {
       activateExtension();
+      save(listTableDB, { activated: true, words: wordList });
+    } 
   }
 
   const activateExtension = () => {
     setActivated(true);
-    emitMessage({ words: wordList });
+    emitMessage({ activated: true, words: wordList});
   }
   
   const desactivateExtension = () => { 
     setActivated(false);
-    emitMessage("switch-off");
+    emitMessage({ activated: false, words: wordList});
   }
 
   const saveWord = (text) => { 
     setWordList((...oldText) => {
       const newList = [].concat(...oldText);
       newList.push(text);
-      save(listTableDB, newList);
+      save(listTableDB, { activated: activated, words: newList});
       return newList;
     });
   }
@@ -49,9 +55,9 @@ export default function App() {
   return ( 
       <div className="page">
         <header className="header">
-          <h1>Browserlary</h1>
+          <h1>PopUpWords</h1>
           <nav>
-            <OnOffToggle updateActiveExtension={updateActiveExtension}/>
+          <OnOffToggle updateActiveExtension={updateActiveExtension} activated={activated}/>
           </nav>
       </header>
       

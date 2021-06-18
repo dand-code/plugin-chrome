@@ -33,9 +33,9 @@ function myMain() {
     let highlighter = new Highlight();
 
     chrome.runtime.sendMessage('get-word-list', (response) => {
-        if (response)
+        if (response && response.activated)
         {
-            highlighter.updateWords(response);
+            highlighter.updateWords(response.words);
             highlighter.highlightWords();
         }
       });
@@ -44,9 +44,8 @@ function myMain() {
         function (request, _sender, _sendResponse) {
 
             highlighter.resetHTML();
-            if (request === "switch-off")
+            if (request.activated === false)
                 return true;
-            
             if (Array.isArray(request.words))
             {
                 highlighter.updateWords(request.words);

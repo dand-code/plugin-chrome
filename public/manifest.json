@@ -1,15 +1,15 @@
 {
-  "name": "Browsavulary",
+  "name": "PopUpWords App",
   "description": "A new plugin from dand-code productions",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
-    "storage", "activeTab"
+    "storage", "activeTab", "tabs"
   ],
   "action": {
     "default_popup": "index.html",
-    "default_title": "Pop-up Word App",
-    "default_icon": "popup-icon.png"
+    "default_title": "PopUpWords App",
+    "default_icon": "PopUpWords.png"
   },
   "background": {
     "service_worker": "background.js"
