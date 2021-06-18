@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 export default function Words(props) {
 
   return (  
-    <div>
+    
       <ul>
        {props.wordList}
       </ul>
-    </div>
+   
   )
 }
 

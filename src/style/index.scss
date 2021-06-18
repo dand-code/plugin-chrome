@@ -102,10 +102,12 @@ form{
 ul {
   display: flex;
   flex-direction: column-reverse;
+  overflow-y: scroll;
   text-align: left;
   list-style: none;
   align-items: center;
   margin: 10px 0;
+  height: 70vh;
   & li {
     display: flex;
     justify-content: space-between;
