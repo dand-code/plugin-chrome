@@ -5,6 +5,7 @@
 }
 
 * {
+  box-shadow: none;
   padding:0;
   margin:0;
   box-sizing: border-box;
@@ -24,56 +25,65 @@
 }
 
 body {
+  --beige: #E8DED2;
+  --lightgreen: #A3D2CA;
+  --green: #5EAAA8;
+  --deepgreen: #056676;
   --black: #393e46;
   --black-off: #444;
-  --yellow: #f7df1e;
   --lightgray: #9c9e9f;
   --gray: #bdc1c6;
   --white: #fff;
-  --green: #06842c;
+  // --green: #06842c;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--black);
-  color: var(--yellow);
+  background: var(--beige);
+  color: var(--deepgreen);
   letter-spacing: 0.05em;
   width: 350px;
   height: 500px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
 }
 
 .page{
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 15px;
+  margin: 30px 20px;
+
 }
 
 form{
   display: flex;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 10px 0;
   & label{
     display: none;
   }
   & input + button {
     line-height: 30px;
     border-radius: 0 3px 3px 0;
-    background: var(--yellow);
-    color: var(--black);
+    background: var(--deepgreen);
+    color: var(--beige);
     border: none;
   }
   
   & input[type="text"] {
-    background: var(--black-off);
+    background: var(--lightgreen);
     border: none;
     line-height: 30px;
     border-radius: 3px;
     font-size: 1rem;
     padding-left: 10px;
-    color: var(--yellow);
+    color: var(--black);
     margin-right: 5px;
     padding: 3px 8px;
     width: 80%;
@@ -92,18 +102,17 @@ form{
 ul {
   display: flex;
   flex-direction: column-reverse;
-  text-align: center;
+  text-align: left;
   list-style: none;
   align-items: center;
   margin: 10px 0;
   & li {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     max-width: 300px;
     margin: 3px 0;
     & .box{
-      border: 2px dotted var(--yellow);
       width: 86%;
     }
     & p {
@@ -112,7 +121,7 @@ ul {
       font-weight: 600;
       & span {
         font-size: 0.7em;
-        font-weight: 200;
+        font-weight: 400;
         overflow-wrap: break-word;
       }
     }
@@ -120,15 +129,16 @@ ul {
 }
 
 button {
+  background-color: transparent;
   line-height: 22px;
   padding: 3px 8px 2px;
-  background: var(--black);
-  color: var(--yellow);
-  border: 2px solid var(--yellow);
   font-size: 18px;
   font-weight: bold;
   border-radius: 3px;
+  border: none;
   vertical-align: top;
   cursor: pointer;
+  & i {
+    color: var(--deepgreen);
+  }
 }
-

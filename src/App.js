@@ -4,6 +4,7 @@ import { useRecoilValue, useRecoilState } from 'recoil';
 import { wordListState, activateState } from './hooks/atom';
 import { updateWordList } from './hooks/selector';
 //components
+import OnOffToggle from './components/OnOffToggle';
 import AddWord from './components/AddWord';
 import Words from './components/Words';
 //local storage
@@ -47,13 +48,16 @@ export default function App() {
 
   return ( 
       <div className="page">
-        <header>
-          <h1>Words</h1>
-        </header>
-      <main>
-        
-        <AddWord saveWord={ saveWord }/>
-        <Words wordList={wordListHTML} updateActiveExtension={updateActiveExtension}/>
+        <header className="header">
+          <h1>Browserlary</h1>
+          <nav>
+            <OnOffToggle updateActiveExtension={updateActiveExtension}/>
+          </nav>
+      </header>
+      
+        <main>
+          <AddWord saveWord={ saveWord }/>
+          <Words wordList={wordListHTML} />
         </main>
       </div>
   );

@@ -21,7 +21,9 @@ export default function DeleteItem(props) {
     }
 
     return (
-        <button onClick={DeleteClick} data-testid={`del_${word}`}>x</button>   
+        <button onClick={DeleteClick} data-testid={`del_${ word }`}>
+            <i className="fa fa-trash-o" aria-hidden="true"></i>
+        </button>   
     );   
 }
 
