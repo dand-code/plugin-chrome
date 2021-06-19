@@ -10,7 +10,7 @@ import Words from './components/Words';
 //local storage
 import { save } from './services/localStorage';
 import { listTableDB } from './hooks/variables';
-//pass message
+//passing messages
 import { emitMessage } from './services/syncMessage';
 
 
@@ -42,13 +42,23 @@ export default function App() {
     emitMessage({ activated: false, words: wordList});
   }
 
-  const saveWord = (text) => { 
-    setWordList((...oldText) => {
-      const newList = [].concat(...oldText);
-      newList.push(text);
-      save(listTableDB, { activated: activated, words: newList});
+  const saveWord = (newWord) => { 
+    setWordList((...oldList) => {
+      let newList = [].concat(...oldList);
+      const index = wordIndex(newWord.word);
+      console.log(index);
+      if (index !== -1)
+        newList[index] = newWord;
+      else 
+        newList.push(newWord);
+      console.log(newList);
+      save(listTableDB, { activated: activated, words: newList });
       return newList;
     });
+  }
+
+  const wordIndex = (newWord) => { 
+    return wordList.findIndex((word) => word.word.toUpperCase() === newWord.toUpperCase());
   }
 
 
