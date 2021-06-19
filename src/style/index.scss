@@ -99,36 +99,42 @@ form{
   }
 }
 
-ul {
+.wraper-list{
   display: flex;
-  flex-direction: column-reverse;
-  overflow-y: scroll;
-  text-align: left;
-  list-style: none;
-  align-items: center;
-  margin: 10px 0;
+  flex-direction: column;
   height: 70vh;
-  & li {
+  overflow-y: scroll;
+  & ul {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 300px;
-    margin: 3px 0;
-    & .box{
-      width: 86%;
-    }
-    & p {
-      cursor: pointer;
-      font-size: 1.4em;
-      font-weight: 600;
-      & span {
-        font-size: 0.7em;
-        font-weight: 400;
-        overflow-wrap: break-word;
+    flex-direction: column-reverse;
+    text-align: left;
+    list-style: none;
+    align-items: center;
+    margin: 10px 0;
+  
+    & li {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 300px;
+      margin: 3px 0;
+      & .box{
+        width: 86%;
+      }
+      & p {
+        cursor: pointer;
+        font-size: 1.4em;
+        font-weight: 600;
+        & span {
+          font-size: 0.7em;
+          font-weight: 400;
+          overflow-wrap: break-word;
+        }
       }
     }
   }
 }
+
 
 button {
   background-color: transparent;
