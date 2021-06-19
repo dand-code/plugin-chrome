@@ -1,6 +1,6 @@
 # PopUpWords
 
-<img src="./pop-up_words.gif" width='600px' />
+<img src="./Demo-v1.gif" width='600px' />
 
 ### Motivation
 Maybe my problem with the new word list could be the same to you: I never came back to reread it to remember the new vocabulary. To solve this, PopUpWords will search for an exact text match on any web page, without care about uppercase or lowercase inputs.
@@ -19,7 +19,7 @@ For this version, the Chrome extension works with English language, but the idea
 - [x] Identify the words on the browser;
 - [x] Access the notes on  the browser;
 - [x] Button enable/disable the extension;
-
+◊
 ### Technology used
 - Javascript
 - React
