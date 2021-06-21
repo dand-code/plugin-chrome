@@ -1,0 +1,18 @@
+//colors
+$beige: #E8DED2;
+$lightgreen: #A3D2CA;
+$green: #5EAAA8;
+$deepgreen: #056676;
+$black: #393e46;
+$black-off: #444;
+$lightgray: #9c9e9f;
+$gray: #bdc1c6;
+$white: #fff;
+
+
+//mixins
+@mixin flexbox-align-elements($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
