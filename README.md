@@ -97,4 +97,3 @@ Unlike the Delete All button, the X button to delete only one item is added to e
 
 As for the case of deleting All and x, before checking if the elements had been deleted, I also checked that the elements were on the screen.
 
-## Life is not a bed of roses:
