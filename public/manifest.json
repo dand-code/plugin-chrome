@@ -1,10 +1,10 @@
 {
   "name": "PopUpWords App",
-  "description": "A new plugin from dand-code productions",
+  "description": "Save translations/descriptions of words to help you to understand better the context when they are browsing through web pages.",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
-    "storage", "tabs"
+    "storage"
   ],
   "action": {
     "default_popup": "index.html",
